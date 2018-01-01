@@ -1,5 +1,7 @@
 FROM dclong/ubuntu_b
 
+ENV PATH /opt/conda/bin:$PATH
+
 RUN apt-get update \
     && apt-get -y install \
         unzip bzip2 \
@@ -12,4 +14,3 @@ RUN apt-get update \
     && apt-get autoclean \
     && conda clean --all --yes
 
-ENV PATH /opt/conda/bin:$PATH
