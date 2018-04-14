@@ -1,6 +1,6 @@
 # [dclong/conda](https://hub.docker.com/r/dclong/conda/)
 
-`conda` in Docker. 
+Mini Anaconda 3 in Docker. 
 
 ## About the Author
 
