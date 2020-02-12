@@ -2,10 +2,6 @@
 
 Mini Anaconda 3 in Docker. 
 
-## About the Author
-
-[Personal Blog](http://www.legendu.net)   |   [GitHub](https://github.com/dclong)   |   [Bitbucket](https://bitbucket.org/dclong/)   |   [LinkedIn](http://www.linkedin.com/in/ben-chuanlong-du-1239b221/)
-
 ## Details 
 
 OS: Ubuntu
@@ -24,3 +20,8 @@ docker run -d \
     -v $(pwd):/workdir \
     dclong/conda
 ```
+
+
+## About the Author
+
+[Personal Blog](http://www.legendu.net)   |   [GitHub](https://github.com/dclong)   |   [Bitbucket](https://bitbucket.org/dclong/)   |   [LinkedIn](http://www.linkedin.com/in/ben-chuanlong-du-1239b221/)
