@@ -17,7 +17,7 @@ docker run -it \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
-    -v $(pwd):/workdir \
+    -v "$(pwd)":/workdir \
     dclong/conda /bin/bash
 ```
 
@@ -28,7 +28,7 @@ docker run -it \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
-    -v $(pwd):/workdir \
+    -v "$(pwd)":/workdir \
     dclong/conda:next /bin/bash
 ```
 

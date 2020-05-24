@@ -13,7 +13,11 @@ RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64
     && conda install -y python=3 \
     && conda install -c conda-forge conda-pack \
     && conda init bash \
-    && conda clean --all --yes
+    && conda clean --all --yes \
+    && pip install git+https://github.com/dclong/xinstall \
+    && xinstall svim -ic --no-lsp \
+    && conda install -c conda-forge python-language-server[all]
+
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' >> /etc/profile
 WORKDIR /workdir
