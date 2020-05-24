@@ -15,7 +15,7 @@ RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64
     && conda init bash \
     && conda clean --all --yes \
     && pip install git+https://github.com/dclong/xinstall \
-    && xinstall svim --pip pip -ic
+    && xinstall svim --pip conda -ic
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' >> /etc/profile
 WORKDIR /workdir
