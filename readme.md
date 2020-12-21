@@ -11,7 +11,7 @@ Additional: Anaconda Python 3 minimal.
 ## Usage in Linux/Unix
 
 ```
-docker run -it \
+docker run -it --init \
     --hostname=conda \
     --log-opt max-size=50m \
     -e DOCKER_USER=`id -un` \
@@ -22,7 +22,7 @@ docker run -it \
 ```
 
 ```
-docker run -it \
+docker run -it --init \
     --hostname=conda \
     --log-opt max-size=50m \
     -e DOCKER_USER=`id -un` \
