@@ -1,4 +1,6 @@
-FROM dclong/ubuntu_b
+# NAME: dclong/conda
+FROM dclong/base
+# GIT: https://github.com/dclong/docker-base.git
 
 ENV PATH=/opt/conda/bin:$PATH
 
