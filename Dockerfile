@@ -18,7 +18,7 @@ RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64
     && conda install -y python=3 \
     && conda install -c conda-forge conda-pack \
     && conda init bash \
-    && pip install git+https://github.com/dclong/xinstall \
+    && pip install -U xinstall \
     && xinstall svim -ic --no-lsp \
     && conda install -c conda-forge python-language-server[all] \
     && conda clean --all --yes \
