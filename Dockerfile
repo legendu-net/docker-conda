@@ -18,8 +18,6 @@ RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64
     && conda init bash \
     && icon svim -ic --strip \
     && conda install -c conda-forge python-language-server[all] \
-    && conda clean --all --yes \
-    && pip cache purge
-
+    && /scripts/sys/purge_cache.sh
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' >> /etc/profile
