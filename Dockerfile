@@ -7,9 +7,7 @@ ENV PATH=/opt/conda/bin:$PATH
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         gcc \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && /scripts/sys/purge_cache.sh
         
 RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /scripts/miniconda.sh \
     && bash /scripts/miniconda.sh -bfp /opt/conda \
