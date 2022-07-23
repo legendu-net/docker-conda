@@ -7,9 +7,7 @@ ENV PATH=/opt/conda/bin:$PATH
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         gcc \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && /scripts/sys/purge_cache.sh
         
 RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /scripts/miniconda.sh \
     && bash /scripts/miniconda.sh -bfp /opt/conda \
@@ -18,11 +16,8 @@ RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64
     && conda install -y python=3 \
     && conda install -c conda-forge conda-pack \
     && conda init bash \
-    && pip install -U xinstall \
-    && xinstall svim -ic --no-lsp \
+    && icon svim -ic --strip \
     && conda install -c conda-forge python-language-server[all] \
-    && conda clean --all --yes \
-    && pip cache purge
-
+    && /scripts/sys/purge_cache.sh
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' >> /etc/profile
