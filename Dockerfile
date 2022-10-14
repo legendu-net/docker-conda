@@ -8,12 +8,12 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         gcc \
     && /scripts/sys/purge_cache.sh
-        
+      
+#&& conda install -y python=3 \
 RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /scripts/miniconda.sh \
     && bash /scripts/miniconda.sh -bfp /opt/conda \
     && rm -rf /scripts/miniconda.sh \
     && conda update -n base conda \
-    && conda install -y python=3 \
     && conda install -c conda-forge conda-pack \
     && conda init bash \
     && icon svim -ic --strip \
