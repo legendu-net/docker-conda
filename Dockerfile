@@ -9,15 +9,12 @@ RUN apt-get update \
         gcc \
     && /scripts/sys/purge_cache.sh
       
-#&& conda install -y python=3 \
 RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /scripts/miniconda.sh \
     && bash /scripts/miniconda.sh -bfp /opt/conda \
     && rm -rf /scripts/miniconda.sh \
     && conda update -n base conda \
-    && conda install -c conda-forge conda-pack \
+    && conda install -c conda-forge pip conda-pack \
     && conda init bash \
-    && icon svim -ic --strip \
-    && conda install -c conda-forge python-language-server[all] \
     && /scripts/sys/purge_cache.sh
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' >> /etc/profile
